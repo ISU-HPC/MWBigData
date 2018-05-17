@@ -13,5 +13,5 @@ DC=${2:-audris/jupyter-r}
 cmd=${1:-R}
 echo "sudo -H -u $username $cmd" >> tmp.sh
 chmod +x tmp.sh
-docker run -it --rm -e DISPLAY=$DISPLAY -p 8898:8888 -v /home/$username:/home/$username -v /tmp/.X11-unix:/tmp/.X11-unix -v $(pwd):/data -w /data $DC /data/tmp.sh 
+docker run -it --rm -e DISPLAY=$DISPLAY -p 8888:8888 -v /home/$username:/home/$username -v /tmp/.X11-unix:/tmp/.X11-unix -v $(pwd):/data -w /data $DC /data/tmp.sh 
 
